@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating my CLI app "WeatherWear""
+title:  "2. Creating my CLI app WeatherWear"
 date:   2017-06-05 22:29:43 -0400
 ---
 
