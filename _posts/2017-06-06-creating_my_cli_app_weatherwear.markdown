@@ -4,6 +4,8 @@ title:  "2. Creating my CLI app WeatherWear"
 date:   2017-06-05 22:29:43 -0400
 ---
 
+[Screenshot of CLI app. Zipcode selected was '10001', clothing for women's that include dresses, shirt, and bottoms, based on the temperature, wind, and precipitation for that area.](http://imgur.com/a/j7aA5)
+
 
 These past few days I have been focusing a lot of attention on finishing up my WeatherWear CLI app. Today it is in a condition that I am currently satisfied with.
 My original intentions were to create a CLI app that would retrieve the current schedule, scores, standings, and team player roster for any team in the NHL or NBA. However, I grew disinterested in the idea as it seemed rather repetitive work. I then settled on the idea of creating an app which would retrieve today's weather and recommend an outfit for you. (Upon further later research, there's actually a site called 'dailydressme.com' which does this - and more, but oh well!)
