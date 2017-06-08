@@ -4,7 +4,7 @@ title:  "2. Creating my CLI app WeatherWear"
 date:   2017-06-05 22:29:43 -0400
 ---
 
-![](http://imgur.com/a/j7aA5)
+![](http://i.imgur.com/iHoWVbc.png)
 
 
 These past few days I have been focusing a lot of attention on finishing up my WeatherWear CLI app. Today it is in a condition that I am currently satisfied with.
