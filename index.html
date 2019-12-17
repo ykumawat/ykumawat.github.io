@@ -53,6 +53,12 @@
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
+        analytics.alias(email.toString(), function() {
+            window.location.href = "";
+        });
+        analytics.group('ABC group', user, function() {
+            window.location.href = "";
+        });
       }
 </script>
 </body>
