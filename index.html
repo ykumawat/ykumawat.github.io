@@ -38,9 +38,9 @@
     <input name="submit" type="submit" value="submit"/>
 </form>
 
-<button type="random-gif" onclick="track('random gif requested')">How about a funny gif?</button>
+<button type="random-gif" onclick="trackGIFButtonClick()">How about a funny gif?</button>
 
-<button type="dad-joke" onclick="track('dad joke requested')">Maybe a dad joke?</button>
+<button type="dad-joke" onclick="track">Maybe a dad joke?</button>
 
     <!--Placeholder for identify and track script -->
     <script type="text/javascript">
@@ -66,15 +66,8 @@
             firstName: firstName,
             lastName: lastName
         });
+
         analytics.track('favorite location submitted', user, function() {
-            window.location.href = "";
-        });
-
-        analytics.track('random gif requested', function() {
-            window.location.href = "";
-        });
-
-        analytics.track('dad joke requested', function() {
             window.location.href = "";
         });
 
@@ -85,6 +78,19 @@
             window.location.href = "";
         });
       }
+
+      function trackGIFButtonClick(){
+        analytics.track('random gif requested', function() {
+            window.location.href = "";
+        });
+      }
+
+      function trackDadJokeClick(){
+        analytics.track('dad joke requested', function() {
+          window.location.href = "";
+        });
+      }
+
 </script>
 </body>
 </html>
