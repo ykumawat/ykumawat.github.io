@@ -46,8 +46,24 @@
     <!--Placeholder for identify and track script -->
     <script type="text/javascript">
       function identify(e){
-        alert.("thanks for submitting!")
+        alert("thanks for submitting!");
         e.preventDefault();
+
+        if (window.localStorage.getItem('ajs_user_id' == "null")) {
+          var anonIdArray = window.localStorage.getItem('ajs_anonymous_id').split("\"")[1];
+          var url = "https://profiles.segment.com/v1/spaces/spa_1VAR6JHvID6wJJDX6hK7pAySqUe/collections/users/profiles/anonymous_id:"+anonId+"/metadata";
+          var params = {
+            headers: {
+              'Authorization': 'Basic' + btoa("dSIiZsclhGs6KzpK2PRIdmk_IKu97X1SPKBK-zKOwY1hwh1xxrqfDcBtVd2LH9VUp5y9FejSnNjAysHF4UtXWY-g89mmrUAbOUqkYtHaA66wGHiA4cYbijKByokx1RAFrv9c2FhmZsnSMo7qslejB8Qf3T2y_cWyHUgfzqqZXr2Z8xKCgc0sQ11kjfiUjGIPD5frXBwiQSdI" + ":" + null)
+            },
+            method: "GET"
+          };
+          fetch(url, params)
+          .then(data=>{return data.json()})
+          .then(res=>{console.log(res)})
+          .catch(error=>console.log(error))
+        };
+
         var form = e.target;
         var email = form["email"].value;
         var firstName = form["firstName"].value;
