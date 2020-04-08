@@ -45,6 +45,8 @@
 
     <!--Placeholder for identify and track script -->
     <script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
         var firstName = form["firstName"].value;
@@ -76,6 +78,7 @@
         analytics.group(company, user, function() {
             window.location.href = "";
         });
+      };
 
       function trackGIFButtonClick(){
         analytics.track('random gif requested', function() {
