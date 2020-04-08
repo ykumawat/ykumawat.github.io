@@ -62,7 +62,10 @@
             details: details,
             company: company
         };
-        analytics.identify({
+
+        var emailEncoded = btoa(email);
+
+        analytics.identify(emailEncoded, {
             email: email,
             firstName: firstName,
             lastName: lastName
