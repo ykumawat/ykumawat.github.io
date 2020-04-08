@@ -15,11 +15,11 @@
 
 </head>
 <body>
-<h1>Welcome to my Segment test website!</h1>
+<h1>Yamini Segment test website</h1>
 
 <h2>What is your favorite place to travel?</h2>
 <p>I am building a directory of the sweetest travel destinations.</p>
-<form name="travel" onSubmit="identify(e)">
+<!-- <form name="travel" onsubmit="identify(e)">
      What is your favorite travel destination?
     <input name="destination" required="" size="81" type="text"/>
     <br><br><br>
@@ -37,14 +37,31 @@
     Company: <input name="company" required="" size="75" type="text"/>
     <br><br>
     <input name="submit" type="submit" value="submit"/>
-</form>
+</form> -->
+
+<form name="travel" onsubmit="identify(event)">
+     What is your favorite travel destination?
+    <input name="destination" required="" size="81" type="text"/>
+    <br><br><br>
+    Any recommendations (cool things to do, places to visit or restaurants to eat)?
+    <br><br>
+    <textarea cols="81" name="details" required="" rows="10">
+    </textarea>
+    <br><br>
+    Name: <input name="fullname" required="" size="75" type="text"/>
+    <br><br>
+    Email: <input name="email" required="" size="75" type="email"/>
+    <br><br>
+    <input name="submit" type="submit" value="submit"/>
+</form> 
+
 
 <button type="random-gif" onclick="trackGIFButtonClick()">How about a funny gif?</button>
 
 <button type="dad-joke" onclick="trackDadJokeClick()">Maybe a dad joke?</button>
 
     <!--Placeholder for identify and track script -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       function identify(e){
         e.preventDefault();
         var form = e.target;
@@ -81,7 +98,33 @@
         analytics.group(company, user, function() {
             window.location.href = "";
         });
-      };
+      }; -->
+
+      <script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var email = form["email"].value;
+        var fullname = form["fullname"].value;
+        var destination = form["destination"].value;
+        var details = form["details"].value;
+        var user = {
+            email: email,
+            name: fullname,
+            destination: destination,
+            details: details
+        };
+
+        var emailEncoded = btoa(email);
+
+        analytics.identify(emailEncoded, {
+            email: email,
+            name: fullname
+        });
+        analytics.track('destination submitted', user, function() {
+            window.location.href = "";
+        });
+      }
 
       function trackGIFButtonClick(){
         analytics.track('random gif requested', function() {
